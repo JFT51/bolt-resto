@@ -1,0 +1,36 @@
+/* Reset default browser styles */
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Example: setting a default font */
+  line-height: 1.6;
+  background-color: #fff; /* Default background color */
+  color: #333; /* Default text color */
+}
+
+/* You can add global styles here if needed, for example: */
+/*
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+*/
+
+/* Remove default Vite styles if any exist beyond basic resets */
+/* For example, if Vite adds specific styles to #root or body, you might override them here or in App.css */
+
+#root {
+  /* If Vite applies styles here, ensure they don't conflict with App.css */
+  /* For a full-page app, you might want: */
+  /* min-height: 100vh; */
+  /* display: flex; */
+  /* flex-direction: column; */
+}
