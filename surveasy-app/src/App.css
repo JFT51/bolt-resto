@@ -1,0 +1,258 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+section {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Added for better internal alignment */
+  flex-direction: column; /* Stack children vertically */
+}
+
+section h2 { /* Main section titles */
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+section h3 { /* Subsection titles within results */
+  font-size: 1.2rem;
+  margin-top: 0; /* Reset margin if needed */
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.upload-section .dropzone {
+  border: 2px dashed #ccc;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  flex-grow: 1; /* Allow dropzones to grow if section is taller */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.upload-section .dropzone p { /* Text like "CV Uploaden" */
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.upload-section .dropzone input[type="file"] {
+  display: block;
+  margin: 10px auto 5px; /* Adjusted margin */
+}
+
+.upload-section .dropzone button,
+.skills-section button { /* Analyseer button */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 10px; /* Margin for buttons */
+}
+
+.upload-section .dropzone button:hover,
+.skills-section button:hover {
+  background-color: #0056b3;
+}
+
+.upload-section .dropzone button:disabled,
+.skills-section button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.skills-section label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.skills-section textarea#priority-skills-input {
+  width: calc(100% - 22px); /* Full width minus padding/border */
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* General status and error messages in .skills-section and .upload-section */
+.skills-section .status-message,
+.upload-section .status-message {
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #007bff;
+  font-style: italic;
+  word-break: break-word;
+}
+.skills-section .error-message,
+.upload-section .error-message {
+  font-size: 0.85rem;
+  margin-top: 8px;
+  color: #dc3545 !important;
+  font-weight: bold;
+  word-break: break-word;
+}
+.upload-section .small-status { /* For less prominent status like transcription complete */
+    font-size: 0.8rem;
+    color: #6c757d; /* Muted color */
+}
+
+
+.results-section h2 {
+    margin-bottom: 15px; /* More space for the main results title */
+}
+.results-section .result-placeholder {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.results-section .result-placeholder:last-child {
+  margin-bottom: 0; /* No margin for the last placeholder in the section */
+}
+
+
+/* Styling for Categorization Summary Section */
+#categorization-summary {
+  background-color: #e6f7ff;
+  border: 1px solid #b3e0ff;
+  margin-bottom: 25px; /* Extra emphasis margin */
+}
+
+#categorization-summary h3 {
+  color: #0056b3;
+}
+
+#categorization-summary p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+#categorization-summary p strong {
+  color: #004085;
+}
+
+.results-section .text-display-area {
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #333;
+  margin-top: 5px;
+}
+
+/* No need for .small-text on text-display-area as JSON is removed */
+
+.skills-list { /* For unranked extracted skills */
+  list-style-type: none;
+  padding-left: 0;
+  max-height: 120px;
+  overflow-y: auto;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.skills-list li {
+  background-color: #e7f3ff;
+  color: #0056b3;
+  padding: 5px 8px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.ranked-skills-list {
+  list-style-type: decimal;
+  padding-left: 25px; /* More space for numbers */
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid #c3e6cb;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.ranked-skills-list li {
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border-left: 4px solid #28a745; /* Green accent for ranked items */
+}
+
+.ranked-skills-list li:nth-child(odd) {
+  background-color: #fdfdfd;
+}
+
+.priority-flag {
+  color: #ffc107;
+  font-size: 1.1em;
+  margin-left: 5px;
+}
+
+
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+  section { /* Ensure sections take full width on mobile */
+      margin-bottom: 20px;
+  }
+  .skills-section textarea#priority-skills-input {
+    width: calc(100% - 22px);
+  }
+}
